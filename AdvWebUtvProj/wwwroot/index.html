@@ -5,6 +5,78 @@
     <title></title>
 </head>
 <body>
+    <hr />
 
+    <h3>Seed</h3>
+
+    <div>
+        <button id="seedButton">Seed</button>
+    </div>
+
+    <hr />
+
+    <h3>Räkna</h3>
+
+    <div>
+        <button id="countButton">Räkna</button>
+    </div>
+    <hr />
+
+    <h3>Visa alla</h3>
+
+    <p>Gå till en ny sida som visar alla nyheter i databasen (som json)</p>
+
+    <a href="/api/things">Visa alla nyheter</a>
+
+    <hr />
+
+    <h3>Lägg till</h3>
+
+    <div id="addForm">
+
+        Type Of Thing: <input name="typeOfThing" type="text" value="" />
+        Name Of Thing: <input name="nameOfThing" type="text" value="" />
+        Price Of Thing: <input name="priceOfThing" type="number" value="" />
+
+        <button id="addThingButton">Lägg till</button>
+    </div>
+
+    <hr />
+
+    <h3>Ta bort</h3>
+
+    <div id="removeForm">
+        Id<input name="id" type="text" value="" />
+        <button id="removeThingButton">Ta bort</button>
+    </div>
+
+    <hr />
+
+    <h3>Uppdatera</h3>
+
+    <div id="updateForm">
+        <table>
+            <tr>
+                <td> Id of thing to change: </td>
+                <td><input name="id" type="number" value="" /></td>
+            </tr>
+            <tr>
+                <td>Type Of Thing:
+                <td><input name="typeOfThing" type="text" value="" />
+
+                <td>Name Of Thing:
+                <td><input name="nameOfThing" type="text" value="" />
+
+                <td>Price Of Thing:
+                <td><input name="priceOfThing" type="number" value="" />
+            </tr>
+            <tr>
+                <td><button id="updateThingButton">Update Thing</button>
+            </tr>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="/js/main.js"></script>
 </body>
 </html>

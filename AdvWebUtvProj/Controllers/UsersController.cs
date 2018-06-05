@@ -11,7 +11,6 @@ namespace AdvWebUtvProj.Controllers
     [Route("[controller]")]
     public class UsersController : Controller
     {
-
         public UsersController()
         {
 
