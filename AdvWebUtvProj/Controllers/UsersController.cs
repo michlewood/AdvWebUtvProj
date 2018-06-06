@@ -35,6 +35,13 @@ namespace AdvWebUtvProj.Controllers
             return Ok("You are admin");
         }
 
+        [HttpGet, Route("notadmintest")]
+        [Authorize(Roles = "NotAdmin")]
+        public IActionResult IsNotAdmin()
+        {
+            return Ok("You are not admin");
+        }
+
         [HttpGet, Route("TempAdminAdd")]
         public async Task<IActionResult> AddAdmin()
         {
@@ -50,6 +57,23 @@ namespace AdvWebUtvProj.Controllers
             var roleResult = await userManager.AddToRoleAsync(user, "Admin");
             if (!roleResult.Succeeded) return BadRequest("Did not add to role");
             return Ok($"Admin with email {user.Email} created");
+        }
+
+        [HttpGet, Route("TempNotAdminAdd")]
+        public async Task<IActionResult> AddNonAdmin()
+        {
+            await roleManager.CreateAsync(new IdentityRole("NotAdmin"));
+            var user = new User()
+            {
+                Email = "notsadmin@gmail.com",
+                UserName = "notsadmin@gmail.com"
+            };
+            var result = await userManager.CreateAsync(user);
+            if (!result.Succeeded) return BadRequest("Did not add user");
+
+            var roleResult = await userManager.AddToRoleAsync(user, "NotAdmin");
+            if (!roleResult.Succeeded) return BadRequest("Did not add to role");
+            return Ok($"Not admin with email {user.Email} created");
         }
 
         //[HttpGet, Route("getall")]
@@ -71,8 +95,8 @@ namespace AdvWebUtvProj.Controllers
         public async Task<IActionResult> SignIn(string email)
         {
             if (User.Identity.IsAuthenticated)
-                return BadRequest("already logged in");
-
+                return BadRequest("already logged in: " + User.Identity.Name);
+            
             try
             {
                 var user = await userManager.FindByEmailAsync(email);

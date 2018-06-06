@@ -12,8 +12,7 @@ namespace AdvWebUtvProj.Models
         public string TypeOfThing { get; set; }
         
         public string NameOfThing { get; set; }
-
-        
+                
         public int PriceOfThing { get; set; }
     }
 }
