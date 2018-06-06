@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace AdvWebUtvProj.Data
+namespace AdvWebUtvProj.Data.Entities
 {
     public class Thing
     {

@@ -1,4 +1,5 @@
 ﻿using AdvWebUtvProj.Data;
+using AdvWebUtvProj.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

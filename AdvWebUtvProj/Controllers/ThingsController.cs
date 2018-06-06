@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AdvWebUtvProj.Data;
+using AdvWebUtvProj.Data.Entities;
 using AdvWebUtvProj.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,7 +16,7 @@ namespace AdvWebUtvProj.Controllers
     { 
         private IThingsRepository _thingsRepository;
 
-        public ThingsController(DatabaseContext context)
+        public ThingsController(ApplicationDbContext context)
         {
             _thingsRepository = new ThingsRepository(context);
         }
@@ -53,7 +54,7 @@ namespace AdvWebUtvProj.Controllers
         }
 
         [HttpPut]
-        public IActionResult Update(Models.UpdateThingModel thing)
+        public IActionResult Update(UpdateThingModel thing)
         {
             if (thing == null)
             {

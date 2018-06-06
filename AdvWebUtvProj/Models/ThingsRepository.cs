@@ -1,4 +1,5 @@
 ﻿using AdvWebUtvProj.Data;
+using AdvWebUtvProj.Data.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,9 @@ namespace AdvWebUtvProj.Models
 {
     public class ThingsRepository : IThingsRepository
     {
-        public DatabaseContext context;
+        public ApplicationDbContext context;
 
-        public ThingsRepository(DatabaseContext context)
+        public ThingsRepository(ApplicationDbContext context)
         {
             this.context = context;
         }

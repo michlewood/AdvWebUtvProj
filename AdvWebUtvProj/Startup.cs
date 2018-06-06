@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AdvWebUtvProj.Data;
+using AdvWebUtvProj.Data.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -32,8 +32,12 @@ namespace AdvWebUtvProj
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddDbContext<DatabaseContext>(options =>
+            services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddIdentity<User, IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
 
             //services.AddSingleton<IThingsRepository, ThingsRepository>();
             //services.AddSingleton<DatabaseContext, DatabaseContext>();
@@ -59,7 +63,7 @@ namespace AdvWebUtvProj
             //DefaultFile.DefaultFileNames.Add("index.html");
             //app.UseDefaultFiles(DefaultFile);
             app.UseDirectoryBrowser();
-            //app.UseAuthentication();
+            app.UseAuthentication();
             app.UseStaticFiles();
             app.UseMvc();
         }
