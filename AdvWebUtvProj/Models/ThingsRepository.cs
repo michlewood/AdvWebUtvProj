@@ -24,9 +24,9 @@ namespace AdvWebUtvProj.Models
 
         public void ClearAll()
         {
-            foreach (var news in GetAll())
+            foreach (var thing in GetAll())
             {
-                context.Remove(news);
+                context.Remove(thing);
             }
             context.SaveChanges();
         }

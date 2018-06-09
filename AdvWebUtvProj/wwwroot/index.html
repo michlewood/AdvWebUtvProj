@@ -6,84 +6,31 @@
 </head>
 <body>
 
-    <input type="text" id="logInEmail" />
-    <button class="btn btn-primary btn-sm" id="logIn">Log in</button><br />
-    <input id="userEmail" type="text" />
-    <button class="btn btn-success btn-sm" id="createUser">Register</button> <br />
+    <h3>User Stuff</h3>
+
+    <button id="seed">Seed users</button>
+
+    <div id="userInfo"></div>
+    <div id="loginDiv"></div>
+
+    <!--<button class="btn btn-success btn-sm" id="getRole">Get Role</button>-->
+    <br />
 
     <hr />
+    <h3>Example Logins</h3>
+    <button id="logInAdmin">Example Admin login</button>
+    <button id="logInMember">Example Member login</button>
 
-    <h3>Seed</h3>
-
-    <div>
-        <button id="seedButton">Seed</button>
-    </div>
-
-    <hr />
-
-    <h3>Räkna</h3>
-
-    <div>
-        <button id="countButton">Räkna</button>
-    </div>
-    <hr />
-
-    <h3>Visa alla</h3>
-
-    <p>Gå till en ny sida som visar alla nyheter i databasen (som json)</p>
-
-    <a href="/api/things">Visa alla nyheter</a>
+    <div id="Users"></div>
 
     <hr />
-
-    <h3>Lägg till</h3>
-
-    <div id="addForm">
-
-        Type Of Thing: <input name="typeOfThing" type="text" value="" />
-        Name Of Thing: <input name="nameOfThing" type="text" value="" />
-        Price Of Thing: <input name="priceOfThing" type="number" value="" />
-
-        <button id="addThingButton">Lägg till</button>
-    </div>
+    <table id="update"></table>
 
     <hr />
-
-    <h3>Ta bort</h3>
-
-    <div id="removeForm">
-        Id<input name="id" type="text" value="" />
-        <button id="removeThingButton">Ta bort</button>
-    </div>
-
-    <hr />
-
-    <h3>Uppdatera</h3>
-
-    <div id="updateForm">
-        <table>
-            <tr>
-                <td> Id of thing to change: </td>
-                <td><input name="id" type="number" value="" /></td>
-            </tr>
-            <tr>
-                <td>Type Of Thing:
-                <td><input name="typeOfThing" type="text" value="" />
-
-                <td>Name Of Thing:
-                <td><input name="nameOfThing" type="text" value="" />
-
-                <td>Price Of Thing:
-                <td><input name="priceOfThing" type="number" value="" />
-            </tr>
-            <tr>
-                <td><button id="updateThingButton">Update Thing</button>
-            </tr>
-        </table>
-    </div>
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script src="/js/things.js"></script>
     <script src="/js/users.js"></script>
+    <script src="/js/GenerateContent.js"></script>
 </body>
 </html>
