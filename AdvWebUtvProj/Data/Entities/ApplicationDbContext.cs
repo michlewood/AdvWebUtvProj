@@ -13,5 +13,10 @@ namespace AdvWebUtvProj.Data.Entities
             : base(context)
         {
         }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        }
     }
 }

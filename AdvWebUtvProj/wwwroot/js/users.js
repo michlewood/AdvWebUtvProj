@@ -97,7 +97,7 @@ function createUser() {
 
 function updateUserInfo(RoleAndName) {
 
-    let print = RoleAndName !== "Anonymous" ? RoleAndName[1] + ": " + RoleAndName[0] : RoleAndName
+    let print = RoleAndName !== "Anonymous" ? RoleAndName[1] + ": " + RoleAndName[0] : RoleAndName;
 
     $("#userInfo").text(print);
 }

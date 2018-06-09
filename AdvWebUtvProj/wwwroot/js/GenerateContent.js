@@ -1,6 +1,6 @@
 ﻿function GenerateThings(role) {
     let updateContent;
-    if (role !== "Anonymous") updateContent += GenerateSeed();
+    updateContent += GenerateSeed();
     updateContent += GenerateCount();
     updateContent += GenerateShowAll();
     if (role !== "Anonymous") updateContent += GenerateAdd();
