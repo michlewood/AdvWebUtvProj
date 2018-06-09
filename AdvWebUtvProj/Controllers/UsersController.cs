@@ -28,13 +28,6 @@ namespace AdvWebUtvProj.Controllers
 
         }
 
-        [HttpGet, Route("admintest")]
-        [Authorize(Roles = "Admin")]
-        public IActionResult IsAdmin()
-        {
-            return Ok("You are admin");
-        }
-
         [HttpGet]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAll()
@@ -72,23 +65,6 @@ namespace AdvWebUtvProj.Controllers
             return Ok($"User with email {email} is signed in");
         }
 
-        [HttpGet, Route("TempAdminAdd/{id}")]
-        public async Task<IActionResult> AddAdmin(int id)
-        {
-            await roleManager.CreateAsync(new IdentityRole("Admin"));
-            var user = new User()
-            {
-                Email = "admin@gmail.com",
-                UserName = "admin@gmail.com"
-            };
-            var result = await userManager.CreateAsync(user);
-            if (!result.Succeeded) return BadRequest("Did not add user");
-
-            var roleResult = await userManager.AddToRoleAsync(user, "Admin");
-            if (!roleResult.Succeeded) return BadRequest("Did not add to role");
-            return Ok($"Admin with email {user.Email} created");
-        }
-
         [Authorize]
         [HttpPost, Route("signout")]
         public async Task<IActionResult> SignOut()
@@ -121,7 +97,7 @@ namespace AdvWebUtvProj.Controllers
 
             var user = new User
             {
-                Email = "admin@gmail.com",
+                Email = "admin@test.com",
                 UserName = "admin"
             };
 
@@ -133,7 +109,7 @@ namespace AdvWebUtvProj.Controllers
 
             user = new User
             {
-                Email = "member@gmail.com",
+                Email = "member@test.com",
                 UserName = "member"
             };
 

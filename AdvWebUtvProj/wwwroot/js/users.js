@@ -2,11 +2,11 @@
     FirstUpdateStuff();
 
     $("#logInAdmin").click(function () {
-        login("admin@gmail.com");
+        login("admin@test.com");
     });
 
     $("#logInMember").click(function () {
-        login("test@test.se");
+        login("member@test.com");
     });
 
     $("#seed").click(function () {
