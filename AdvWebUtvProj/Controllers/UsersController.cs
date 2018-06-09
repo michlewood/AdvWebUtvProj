@@ -172,6 +172,7 @@ namespace AdvWebUtvProj.Controllers
             }
             try
             {
+                var addr = new System.Net.Mail.MailAddress(email);
                 await roleManager.CreateAsync(new IdentityRole("Admin"));
                 await roleManager.CreateAsync(new IdentityRole("Member"));
                 var user = new User
