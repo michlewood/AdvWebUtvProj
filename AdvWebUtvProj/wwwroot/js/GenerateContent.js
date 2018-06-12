@@ -1,5 +1,5 @@
 ﻿function GenerateThings(role) {
-    let updateContent;
+    let updateContent = '<h2>Things database<h2/>';
     updateContent += GenerateSeed();
     updateContent += GenerateCount();
     updateContent += GenerateShowAll();
@@ -34,8 +34,8 @@ function GenerateShowAll() {
         '<tr>'
         + '    <td><h3>Visa alla:</h3></td>'
         + '    <td>'
-        + '        <p>Gå till en ny sida som visar alla nyheter i databasen (som json)</p>'
-        + '        <a href="/api/things">Visa alla nyheter</a>'
+        + '        <p>Gå till en ny sida som visar alla "Things" i databasen (som json)</p>'
+        + '        <a href="/api/things">Visa alla "Things"</a>'
         + '    </td>'
         + '</tr>';
     return generateShowAll;
